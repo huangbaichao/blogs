@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>a new blog</title>
+      <link href="/2020/01/11/a-new-blog/"/>
+      <url>/2020/01/11/a-new-blog/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2020/01/10/hello-world/"/>
+      <url>/2020/01/10/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Cocos </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>FairyGUI的使用技巧和优化建议</title>
+      <link href="/2020/01/05/FairyGUI%E7%9A%84%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E5%92%8C%E4%BC%98%E5%8C%96%E5%BB%BA%E8%AE%AE/"/>
+      <url>/2020/01/05/FairyGUI%E7%9A%84%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E5%92%8C%E4%BC%98%E5%8C%96%E5%BB%BA%E8%AE%AE/</url>
+      
+        <content type="html"><![CDATA[<h1 id="FairyGUI的使用技巧和优化建议"><a href="#FairyGUI的使用技巧和优化建议" class="headerlink" title="FairyGUI的使用技巧和优化建议"></a>FairyGUI的使用技巧和优化建议</h1><p>#development/egret引擎 #development/开发优化</p><p><a href="">关注</a>  字数 4178 评论 0</p><p>这是侑虎科技第468篇文章，感谢作者黄程供稿。欢迎转发分享，未经作者授权请勿转载。如果您有任何独到的见解或者发现也欢迎联系我们，一起探讨。（QQ群：465082844）</p><p>作者联系方式： <a href="https://www.jianshu.com/p/4b40a47a7331mailto:sniperbat@gmail.com" target="_blank" rel="noopener">sniperbat@gmail.com</a> ，作者也是 <a href="https://www.uwa4d.com/#activity-us" target="_blank" rel="noopener">U Sparkle活动</a> 参与者，UWA欢迎更多开发朋友加入 <a href="https://www.uwa4d.com/#activity-us-complete" target="_blank" rel="noopener">U Sparkle开发者计划</a> ，这个舞台有你更精彩！</p><hr><p>FairyGUI是一支持跨平台的游戏GUI解决方案。由编辑器和平台SDK两大部分组成。跨平台的编辑器提供了UI素材的管理和编辑功能，配合各平台的SDK可快速方便的构建针对各平台进行优化了的UI界面。<br>具体介绍和教学请移步FairyGUI的官网： <a href="http://fairygui.com/" target="_blank" rel="noopener">http://fairygui.com</a></p><p>我们团队是在2017年从Cocos2d-X向Unity的转型过程中接触并应用了FairyGUI的，当时的背景是团队中美术无3D和Unity开发经验，程序则一半人员处于转型学习Unity阶段，NGUI和UGUI都是全新的东西，相关人员对转用Unity做UI编辑的学习情况不理想。而之前Cocos2d-x开发时相当部分的UI制作流程是美术设计并切图，需要程序进行代码层拼装实现，美术确认并调整的流程限制了开发效率，这也是我们在新项目中想优化和解决的问题。</p><p>当美术主管建议并引入了FairyGUI，经测试评估以后，我们发现这个解决方案非常适合我们团队。比起Unity的3D环境，美术更习惯有点类似Flash的编辑界面，美术可以在编辑器内完成绝大部分的UI界面设计和测试工作，尤其是动效部分。基本上不需要程序介入就可以所见即所得地完成70%的设计工作。而程序节省了拼界面和做动效的过程，可以专注于业务层的编写。</p><p>经过1年半的开发和学习，已经顺利应用到产品中了。当然也遇到了不少坑，也总结出一些使用技巧，在此整理了几个，希望能给大家以参考。</p><hr><h2 id="一、像素点击测试功能注意点"><a href="#一、像素点击测试功能注意点" class="headerlink" title="一、像素点击测试功能注意点"></a><em>一、像素点击测试功能注意点</em></h2><p>当我们在编辑器内制作的时候，可以使用任意包内的图片作为当前组件点击测试用的Mask，并且在编辑器内预览是没有问题的。但在实际运行时，该Mask图片需要包含在该组件的当前包内，如果在别的包比如Common包内时，相关检测用数据文件不会导出，像素点击测试无效。</p><p>比如fishItem01这样的图作为通用背景，可能放在Bg或者Common之类的包内被其他包的资源引用。在List Demo包的List1组件内，bg图片引用了Bg包内的fishItem01图片作为按钮背景，并且同时该图片作为像素点击测试用Mask使用。预览正常，但实际运行，像素测试功能无效。<br>[image:8DAD43AB-0917-4F01-B581-852987622C89-407-0000A20CB4A289F6/1000.png]</p><p>通过查看FairyGUI的源代码发现原因如下：</p><p>3.0版本以前的源码：<br>[image:AC4BD73B-5EF7-4379-A722-1F6954F585C2-407-0000A20CB48C84DC/1000.png]</p><p>3.0及以后版本的源码：<br>[image:C2737B13-E5AD-46F5-9D53-3273DE2EE8D6-407-0000A20CB4764157/1000.png]</p><p>在此可以看到都是在初始化组件时，通过packageItem.owner去获得这个测试资源的，这个owner是UIPackage类型，是当前组件(packageItem)所在的包。当没有在当前包内找到hitTestId指向的资源时将忽略hitArea的设置，自然像素点击测试失效。将该资源从外部包拷贝一份到相应组件所在包后问题解决。</p><p>但教程中并没有提到这个问题。<br>[image:87D50FFF-96F1-4D45-9694-2D31EC0E0259-407-0000A20CB46264F9/1000.png]</p><p>那么在此进一步分析hitTest的原理以及资源的管理方式。(以下分析基于3.0以前版本，3.0以后只是进行了导出资源的二进制化，基本原理应该还是一致的)</p><p>观察之前代码发现hitArea是一个PixelHitTest类型，数据来源于UIPackage.GetPixelHitData函数，该函数通过 _hitTestDatas成员，以ItemId为Key获取数据，而_hitTestDatas内数据由以下代码初始化。<br>[image:ABFF0C8F-7A6E-41E8-B13F-E39FE9B3185C-407-0000A20CB44CEA76/1000.png]</p><p>可以看到系统载入了一个”hittest.bytes”文件。那么在使用到了像素测试的包导出后都能找到一个叫“包名@hittest.bytes”的文件。事实上如果使用了外部包内的资源做像素测试Mask，那么根本不会导出这个文件。自然无法进行像素测试了。</p><p>打开这个文件，会发现是以文本形式记录的二进制数据。由于解析是while循环，可以判断该文件内会集合多个hitTest的资源。<br>[image:406EFC86-4EC7-4C82-A6FE-0FCD6FDE750F-407-0000A20CB430A5F8/1000.png]</p><p>继续分析ba.ReadString函数，开头的ushort保存了一个hitAreaData的id名的长度，在此是6，后面6个byte:“7337 7578 6a74”则是这个id。Ascii编码转换后是”s7uxjt”。并且使用该id名作为key，将测试数据保存在“_hitTestDatas”字典型内。正因为只有Item的id而没有包名，所以只能在当前包内寻找资源。</p><p>而打开使用了hitTest的组件文件可以看到hitTest引用了内部的”n9_ockd”组件，该组件是一个image，src=“s7uxjt”。<br>[image:F760FA30-6FAE-4987-B930-A942B5F1C50E-407-0000A20CB41AA17A/1000.png]</p><p>打开这个组件所在包文件“package.xml”，搜索” s7uxjt”，就可以找到这个文件了。就是指向那张用于像素测试的图。<br>[image:B93E01DE-43E6-477D-8B08-5DF3EA7D4220-407-0000A20CB3FD5C4F/1000.png]</p><p>回到”hittest.bytes”文件继续分析，根据PixelHitTestData.Load函数，后续的一个int是空白未使用，再后续一个int是像素宽度，因为是大端存储，在这儿是”0xaa” = 170, scale = 1/“0x02”, 因此整个图宽340px，pixels总数0x00000f86(3974)个字节，后续则是从图片编码转换后的测试数据。我们使用的图片是340X374，一共是127160个像素，到目前为止图片实际像素点和hitTestData数据并不相符。<br>[image:3B22C2F3-FBC4-47F7-9F2F-05F4A64E45DA-407-0000A20CB3E0229A/1000.png]</p><p>进一步分析检测方法：<br>[image:A38EF83A-3247-4C57-89CC-B096FBC27240-407-0000A20CB3CE83B3/1000.png]</p><p>点击的本地坐标点localPoint根据测试区域的偏移和scale属性，被映射到原图1/2的区域，因为一般不需要真正点对点精度的检测，采取原图一半精度的检测也足够了。并且因为只要检测是否有颜色值，1个bit足够，因此1个字节可以存放8个点的信息，于是通过pos -&gt; pos2, pos3的计算，可以找到在_data数据中找到该点的bit位并返回hit判断。(其他边界检查不累述了)</p><p>PS：测试图片127160个像素，映射后除以4，等于31790个测试点，按位编码除以8后，3973.75 取整后刚好3974个字节。</p><hr><h2 id="二、动效播放TimeScale的问题"><a href="#二、动效播放TimeScale的问题" class="headerlink" title="二、动效播放TimeScale的问题"></a><em>二、动效播放TimeScale的问题</em></h2><p>使用FairyGUI 2.4.0以前版本动效播放都一切正常没问题。但是升级到3.0.0版本后发现动效播放不完整现象，头上一段完全没有播放。查看教程以后发现有这么一段:<br>[image:0DF03414-B433-4D71-B356-13AFFE5417E9-407-0000A20CB3BC56EB/1000.png]</p><p>尝试将该动效的ignoreEngineTimeScale设置为false后，播放正常。</p><p>接下来跟踪ignoreEngineTimeScale相关代码调查出了什么问题。进一步查看Github上的代码更新发现2018年8月15日的一个提交：<br>[image:211F405B-D43A-4868-8710-4EEC9D60A29F-407-0000A20CB3AA2335/1000.png]</p><p>[image:1B9327AB-3BF1-4345-84D0-9C034BA99F3C-407-0000A20CB39673E6/1000.png]</p><p>该修改去除了对dt即Time.unscaledDeltaTime的上限设置，于是dt可以超过0.1f秒。于是在这儿打印了一下这个时间，发现在游戏开始启动的一段时间这个值非常高，甚至超过1秒。因此后续动画播放计算加上这个dt以后相当于略过了这1秒时间。而该修改之前会强制dt最大0.1f，因此虽然也是略过了0.1秒，但是还基本看不太出问题。</p><p>继续调查代码，ignoreEngineTimeScale是在8月2日加入的，之前2.3.1版本使用外部的DoTween，2.4.0开始使用内置GTween。因此该问题2.4.0版本开始受影响。</p><p>而我这儿比较大的Time.unscaledDeltaTime时间其实是游戏启动后执行脚本的Start。一般情况下，Start内会大量一次性的初始化造成暂短的卡顿。并且往往Start初始化完成以后会播放进场动效或者设置控制器，并由控制器调用播放动效。但是该动效更新时读取了值较大的Time.unscaledDeltaTime，于是这个时间内的动效都被”快进”了。Time.unscaledDeltaTime是两帧之间实际消耗值而Time.deltaTime会被计算并控制在Time Manager设置的范围内。</p><p><em>几个解决方案：</em></p><ol><li><p>直接修改FairyGUI源码的默认ignoreEngineTimeScale为false。让FairyGUI就是默认使用Time.deltaTime来计算动画时间。</p></li><li><p>缺点：修改了库代码，会有后续版本更新的维护问题。修改有可能不符合作者设计思路，造成别的潜在bug出现的可能性。</p></li><li><p>设置特定动效的ignoreEngineTimeScale为false。</p></li><li><p>缺点：该值默认为true，如果有大量动效受影响，修改不方便。而且如果该动效由控制器调用，则修改更为麻烦。</p></li><li><p>Start执行动效时Play函数传入延迟时间，让动效延迟1-2帧时间后执行。</p></li><li><p>缺点：如果需要切换到控制器的非默认状态则延迟太大容易造成界面以默认状态描画若干帧，造成画面闪现。</p></li><li><p>使用协程或者其他程序逻辑，将动效播放或者控制器切换移出Start或者其他可能造成占用时间长的函数。延迟播放。</p></li><li><p>缺点：代码逻辑复杂化，不方便维护。</p></li><li><p>美术在FairyGUI编辑器内由控制器播放动效处进行延迟播放。</p></li><li><p>缺点：延迟的时间控制不准确。可能造成3的缺陷。</p></li></ol><p>个人认为使用Unity的TimeScale可对应大部分项目。期待谷主后续改进。</p><hr><h2 id="三、列表使用的一个优化案例"><a href="#三、列表使用的一个优化案例" class="headerlink" title="三、列表使用的一个优化案例"></a><em>三、列表使用的一个优化案例</em></h2><p>项目中需求要做一个类似下图的Item列表：<br>[image:7A7FED9C-FF60-441E-AD0C-42E3D5BC4504-407-0000A20CB382F34B/1000.png]</p><p>两排横列，Item以上下上下的顺序排布。并且要求Item斜向显示。因为需要斜着显示，因此需要像素点击测试，否则会发生点击了4号Item右上角，响应了6号的情况。</p><p>按一般思路制作了第一版本的Item：<br>[image:254413FA-9F3A-47CB-A8EE-460C64C33E61-407-0000A20CB371302B/1000.png]</p><p>执行后：<br>[image:171D4DCB-8D0E-4195-9658-C2ADFFC16DB3-407-0000A20CB35F0F66/1000.png]</p><p>当勾选UIPanel上的FairyBatching后：<br>[image:8AD91441-E627-4E27-99E6-5FD459B4DE43-407-0000A20CB34D477C/1000.png]</p><p>基本省下一半DrawCall。继续观察OverDraw以及Frame Debug：<br>[image:31770FB4-6B15-4F55-AEA8-7431D988EBAF-407-0000A20CB33AA1A6/1000.png]</p><p>[image:C7F5BF7F-3910-425A-8B96-952A704629FE-407-0000A20CB328E734/1000.png]</p><p>可以发现FairyGUI判断左右title和背景图有遮挡，但是上下没有任何遮挡，因此上下进行合批渲染，使用了3个批次，分别渲染了底图，icon和title。当前最后渲染的是title文字而下一列的第一个要渲染的是底图，因此材质不同不能合批。因此总的DrawCall减少一半。</p><p>继续寻求优化方法：<br>[image:2D4DDC94-34DB-4EA6-9CB7-FE55AD8F927E-407-0000A20CB3163A5F/1000.png]</p><p>将原来一个list拆分成3个list。每个list对应Item的3个部分，title，bg，icon。Item也拆分成3个使用。只有list3接收触摸响应，list1和list2设置为不可触摸，通过代码进行滚动的同步。</p><p>Title部分：<br>[image:473378BF-75EB-4731-A07F-F8AECAAC3FC5-407-0000A20CB301CB21/1000.png]</p><p>Icon部分：<br>[image:8EC5BAD3-AA5D-4DEE-B155-95731E46E235-407-0000A20CB2ED764B/1000.png]</p><p>Bg部分：<br>[image:8C8031C0-93D0-4216-BF68-AE7ABC6DEF93-407-0000A20CB2DB4353/1000.png]</p><p>修改脚本后执行：<br>[image:8AC8B1DF-A122-4696-89AE-E41C30A6459D-407-0000A20CB2C8B1B1/1000.png]</p><p>分层以后，总共3个材质的DrawCall都可以合并了。</p><p>由于做了分层，代码需要做一定修改：<br>[image:F66FCD43-1108-450E-9F6C-597961320490-407-0000A20CB2B62D2D/1000.png]</p><p>其他实现细节根据大家项目实际需求做微调。还可以考虑将上述代码封装成自定义的List类来进行操作。</p><hr><h2 id="四、关于合批的点点滴滴"><a href="#四、关于合批的点点滴滴" class="headerlink" title="四、关于合批的点点滴滴"></a><em>四、关于合批的点点滴滴</em></h2><p>在此简单跟一下FairyGUI的合批流程，本文不打算用太多篇幅展开讨论细节，有兴趣的同学可以自己看代码。</p><p>当我们设置了UIPanel的fairyBatching成员变量后，在创建UI容器(CreateContrainer)和反映属性修改(ApplyModifiedProperties，编辑器用)2个操作时，会赋值给容器的fairyBatching属性，该属性的set操作内会设置“_fBatchingRequested”并遍历逐级通知父节点有子节点需要合批。如果该父节点合批属性也为on时，也再次设置“_fBatchingRequested”标识。运行期直接设置容器组件的fairyBatching属性也可以激活合批。</p><p>回头看更新操作，逐步跟踪代码执行StageEngine.LateUpdate -&gt; Stage.InternalUpdate -&gt;Container.Update ，进入Container.Update后如果”_fBatching”为true，则上下文对象的batchingDepth++，这个上下文对象会在子节点组件调用Update时往下传，而不少组件是继承于Container的，因此这儿只在第一级Container，即第一级父容器时才做SetRenderingOrder的操作，之后出Update调用前batchingDepth–。</p><p>在Container.SetRenderingOrder函数内如果之前设置的“_fBatchingRequested”标识为true则进行合批处理DoFairyBatching()。该函数内首先将“_fBatchingRequested”标识设置为false，因此可以判断，各容器设置合批属性后，合批的操作只做一次。跟踪设置“_fBatchingRequested”为true的2个函数(UpdateBatchingFlags，InvalidateBatchingState)，可发现以下情况可能再次触发调用合批操作：</p><p>设置某容器节点合批属性为true时：</p><ul><li>添加子节点，移除子节点，设置子节点顺序，交换子节点，改变子节点Order等节点操作</li><li>设置是否可见</li><li>设置混合模式</li><li>Image组件更新Texture时</li><li>MovieClip组件设置动画数据时</li><li>GList组件更新Bounds时</li><li>GProgressBar更新时</li><li>GSlider更新时</li><li>动效的停止，播放，缓动更新</li><li>容器设置裁剪Rect</li><li>容器设置遮罩mask</li><li>进入绘画模式，将组件对象画入RenderTexture时<br>让我们回到DoFairyBatching函数，这儿会维护一个_descendants列表，递归调用CollectChildren函数，收集子节点。如果子节点容器也设置了“_fBatchingRequested”为true，则在CollectChildren内调用子节点容器的DoFairyBatching。收集完子节点后，两层循环遍历_descendants列表，根据材质和bounds信息进行插入排序。排序会调用List的RemoveAt和Insert，内部会可能调用Array.Copy，要注意性能问题。</li></ul><p>排完序后回到SetRenderingOrder函数，再次循环遍历_descendants列表依次设置子节点(DisplayObject)的renderingOrder属性。</p><p>DisplayObject.renderingOrder属性实际对应到DisplayObject内部的graphics和paintingGraphics2个Graphics的sortingOrder。</p><p>NGraphics是FairyGUI的渲染部分核心，内部维护了对应到Unity场景中的GameObject，MeshFilter，MeshRenderer，Shader等信息。</p><p>而设置NGraphics.sortingOrder则是设置MeshRenderer.sortingOrder，这也是Unity中手动调整mesh渲染顺序的方法。</p><p>以上就是整个的FairyGUI合批的大致流程。综合来看要注意动效，GProgress，GSlider，绘画模式这几个可能会每帧更新造成持续做合批操作的部分。</p><hr><h2 id="五、关于循环虚拟列表"><a href="#五、关于循环虚拟列表" class="headerlink" title="五、关于循环虚拟列表"></a><em>五、关于循环虚拟列表</em></h2><p>循环虚拟列表是个很有用的东西，尤其是在做一些关卡选择，武器选择之类界面时。但是有一些细节值得注意。</p><p>首先我们创建一个Item数为10的循环虚拟列表：<br>[image:B61694DF-583A-4538-BE5A-10EA1188373B-407-0000A20CB2A1C775/1000.png]</p><p>[image:ECF18B5B-1C77-4BFC-9886-F1DCAA86CB7F-407-0000A20CB28F3006/1000.png]</p><p>在画面中分别打印出一个Item的Child Index，ItemIndex和Hash值。Child Index对应了实际描画在画面中的子节点索引，在Demo中是0-5，可以通过OverDraw看到实际描画了6个Item，但是因为List有裁剪，只显示了5个。Item Index对应虚拟列表内Item的实际数量，这儿是0-9。因为循环虚拟列表的Item对应的DisplayObject对象是复用的。因此通过Hash来跟踪。</p><p>当少许向右移动一点点，Item的索引信息发生了变化：<br>[image:6FC66A76-28D5-4FFC-B39A-7CA9CDE0C2B5-407-0000A20CB27D056E/1000.png]</p><p>对比之前的可以发现，系统在画面外最左边添加了一个Item，这时画面中的第一个Item的Child索引变成了1，其他都没有变。</p><p>当继续向右拖动List，直到0x39EB990这个Item对象再次出现在画面最左端时该对象的Child Index还是为1，ItemIndex为3。<br>[image:EB6A5630-2FFA-434C-A4A6-989FA84F78F3-407-0000A20CB26AA088/1000.png]</p><p>观察可以发现向右持续拖动过程中，一旦最左的Item完全出现在画面，就会在左边再增补一个Item，这时候会发生重置Child的操作，这个过程还会引发所有Child的重绘并调用ItemRender，教程中也讲到了相关效率问题。</p><p>首先我们要了解循环列表首先是虚拟列表，Item信息实际是存放在List内部_virtualItems列表内的。该列表的长度虚拟列表时和numItems一致，循环列表则numItems * 6，并且只增不减。并且该列表保存的是ItemInfo，而非实际的GButton之类对象。假设一共有5个Item，则循环列表的情况下_virutalItem长度为30。而实际描画用的Item对象可能有10个，保存在_virtualItem哪个位置是不一定的，HandleScroll系列函数会对其进行重排。实际会从_firstIndex开始的_numItems个。</p><p>观察selectedIndex属性的get操作：</p><p>可以看到如果是循环虚拟列表，会从_virtualItems列表里循环搜索出被选中的那个并根据item数量取模获得。<br>[image:2D40CCCD-E39A-4539-A4C2-95FF6BA529A7-407-0000A20CB257E44E/1000.png]</p><p>而selectedIndex属性的set操作：</p><p>调用了AddSelection函数，注意是直接把Value传入，即传入的是需要选中的ItemIndex。<br>[image:4C33E69C-4821-474B-A6FD-DAA17CF21C33-407-0000A20CB23B6C0A/1000.png]</p><p>而AddSelection函数内并没有对循环列表的判断，直接用传入的ItemIndex 不经过换算从_virtualItems直接获取ItemInfo并设置该info对应obj 按钮对象的selected属性。<br>[image:66CE67AC-B43E-40F3-8810-41923B798BB4-407-0000A20CB2258939/1000.png]</p><p>事实上虚拟列表可能没问题，但是循环列表中想选中的对象可能并不在该位置上，ii.obj可能是一个空值。造成想选中的那个按钮无法设置selected属性。另外如果Item数比Child数少的情况下，画面中一样ItemIndex的对象有多个。那么selectedIndex究竟选中的是哪个呢？</p><p>总结来说就是循环列表不要使用selectedIndex。</p><hr><h2 id="六、Text影响DrawCall的例子"><a href="#六、Text影响DrawCall的例子" class="headerlink" title="六、Text影响DrawCall的例子"></a><em>六、Text影响DrawCall的例子</em></h2><p>拿着上面的例子可以继续就DrawCall做一个探讨。</p><p>当我简单设置按钮的title为”test’这样短小的字符串时：<br>[image:C9F52CFF-B9B2-4352-8E09-20A47E93C5FA-407-0000A20CB2105882/1000.png]</p><p>可以看到DrawCall是2。</p><p>当我在title内写入更多信息的时候：<br>[image:E65400EF-96CC-41F2-8AA0-07B42E58B42D-407-0000A20CB1FB849A/1000.png]</p><p>DrawCall变成了7。查看FrameDebug究其原因则是因为为了显示Text而生成的Mesh顶点超过了300。<br>[image:12719280-A4DB-408C-84C1-7FE14A96FA0B-407-0000A20CB1E9A507/1000.png]</p><hr><h2 id="七、滤镜影响DrawCall"><a href="#七、滤镜影响DrawCall" class="headerlink" title="七、滤镜影响DrawCall"></a><em>七、滤镜影响DrawCall</em></h2><p>继续折腾，给背景图添加一个滤镜效果：<br>[image:3A5537E7-7F08-4E4E-90DB-B6DF1B4EC81D-407-0000A20CB1CEFC9F/1000.png]</p><p>完全没有合批了。<br>[image:46E7BC6A-86A0-4746-BF93-C7BBD52FFFA3-407-0000A20CB1BB5B4D/1000.png]</p><p>根据之前关于合批部分的分析并跟踪代码会发现所有背景的Material都不一样，也就是说系统针对每个Image都生成了一个Material实例。</p><p>继续调查发现系统给设置了滤镜的材质都设置了“COLOR_FILTER”关键词。而系统会根据设置的材质Keyword来生成材质，在Material.GetMaterialManager函数内发现：<br>[image:D283C118-26A5-4FD7-B24C-12327FEF4558-407-0000A20CB19BB689/1000.png]</p><p>只要是带上关键词的Material都会重新生成一个实例，因此就无法进行合批了。目前知道的关键词只有“COLOR_FILTER”。因此慎用滤镜！</p><hr><p>文末，再次感谢黄程的分享，如果您有任何独到的见解或者发现也欢迎联系我们，一起探讨。（QQ群：465082844）。<br>也欢迎大家来积极参与 <a href="https://www.uwa4d.com/#activity-us-complete" target="_blank" rel="noopener">U Sparkle开发者计划</a> ，简称”US”，代表你和我，代表UWA和开发者在一起！</p><p><a href="https://upload-images.jianshu.io/upload_images/9378586-2a0ebfb88c18cb7b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000" target="_blank" rel="noopener">https://upload-images.jianshu.io/upload_images/9378586-2a0ebfb88c18cb7b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 优化 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> FairyGUI </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>create an empty title</title>
+      <link href="/2020/01/05/create-an-empty-title/"/>
+      <url>/2020/01/05/create-an-empty-title/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> Cocos </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>How to use Cocos Creator</title>
+      <link href="/2020/01/04/How-to-use-Cocos-Creator/"/>
+      <url>/2020/01/04/How-to-use-Cocos-Creator/</url>
+      
+        <content type="html"><![CDATA[<h2 id="如何使用Box2D模拟浮力"><a href="#如何使用Box2D模拟浮力" class="headerlink" title="如何使用Box2D模拟浮力"></a>如何使用Box2D模拟浮力</h2><blockquote><p>Box2D</p></blockquote><p><a href="http://www.iforce2d.net/b2dtut/buoyancy" target="_blank" rel="noopener">iForce2D Tutorial</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Cocos </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Cocos </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>test with copyright</title>
+      <link href="/2020/01/04/test-with-copyright/"/>
+      <url>/2020/01/04/test-with-copyright/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>“不能使用中文命名文件”</title>
+      <link href="/2020/01/04/%E2%80%9C%E4%B8%8D%E8%83%BD%E4%BD%BF%E7%94%A8%E4%B8%AD%E6%96%87%E5%91%BD%E5%90%8D%E6%96%87%E4%BB%B6%E2%80%9D/"/>
+      <url>/2020/01/04/%E2%80%9C%E4%B8%8D%E8%83%BD%E4%BD%BF%E7%94%A8%E4%B8%AD%E6%96%87%E5%91%BD%E5%90%8D%E6%96%87%E4%BB%B6%E2%80%9D/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>test</title>
+      <link href="/2020/01/04/test/"/>
+      <url>/2020/01/04/test/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>可以使用中文标题吗？</title>
+      <link href="/2020/01/04/How-to-sync-Hexo-between-devices/"/>
+      <url>/2020/01/04/How-to-sync-Hexo-between-devices/</url>
+      
+        <content type="html"><![CDATA[<p>支持中文吗？</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
+</search>
